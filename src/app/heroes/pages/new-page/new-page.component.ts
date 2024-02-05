@@ -69,6 +69,7 @@ export class NewPageComponent implements OnInit{
     if( this.currentHero.id ) {
       this.heroesService.updateHero( this.currentHero )
         .subscribe( hero => {
+          this.router.navigate(['/heroes'])
           this.showSnackBar(`${ hero.superhero } updated!`);
         });
         return;
